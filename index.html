@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Typing Game</title>
+        <link rel="stylesheet" href="style.css">
+            <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjiw5cEHbc4BhXtJh-bBzC8Kmzj6Ok2evSpQ&s" type="image/x-icon" />
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap');
+        </style>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Bitcount&family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&display=swap');
+        </style>
+
+    </head>
+    <body>
+        <div class = "container">
+        <div class="header-div">
+            <header class="header-text">Typing Game</header>
+        </div>
+
+        <div class = "indicator-container">
+
+            <div class = "wpm-div shake-target">
+                <div class="header_text">WPM</div>
+                <div class = "curr-wpm">100</div>
+            </div>
+
+            <div class = "cpm-div shake-target">
+                <div class="header_text">CPM</div>
+                <div class = "curr-cpm">100</div>
+            </div>
+
+            <div class = "error-div shake-target">
+                <div>ERRORS</div>
+                <div class = "curr-error">0</div>
+            </div>
+
+            <div class = "time-div shake-target">
+                <div>TIME(sec)</div>
+                <div class = "curr-time">60</div>
+            </div>
+
+            <div class = "acc-div shake-target">
+                <div>% ACCURACY</div>
+                <div class = "curr-acc">100</div>
+            </div>
+        </div>
+
+        <div class="text-container shake-target">Click on the area below to start the game</div>
+
+        <div class = "input-container">
+            <textarea class = "input" placeholder="start typing here..." 
+            oninput = "processCurrentText()" 
+            onfocus="startGame()"></textarea>
+        </div>  
+
+        <button class="restart-btn"
+        onclick="resetValues()">Restart</button>
+
+        </div>
+
+        <script src = "game.js"></script>
+ 
+
+    </body>
+</html>
