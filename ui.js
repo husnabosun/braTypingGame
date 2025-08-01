@@ -26,6 +26,21 @@ containerToClick.addEventListener('click', () => {
     }, 400)
 })
 
+const volumeButton = document.querySelector('.volume-btn');
+const icon = volumeButton.querySelector('i');
+volumeButton.addEventListener('click', () => {
+    // toggle takes one class name I mean not fa-solid fa-volume-high 
+    icon.classList.toggle('fa-volume-high');
+    icon.classList.toggle('fa-volume-xmark');
+})
+
+/* if (icon.classList.contains('fa-volume-xmark')) {
+    audio.muted = true;
+}
+else {
+    audio.muted = false;
+}
+*/
 const header_element = document.querySelector('.header-text');
 const text = header_element.textContent;
 header_element.textContent = '';
@@ -39,25 +54,31 @@ text.split('').forEach(char => {
 
 let TIME_LIMIT = 60;
 
-let text_array = ["When Tom's grandmother passed away, he inherited $50,000. Unsure of what ",
-    "to do with the money, he sought advice from a financial advisor.Together, they devised a plan.",
-    "Tom invested 60 % of the money in a diversified portfolio of stocks and bonds, put 20 % into a high - yield ",
-    "savings account for emergencies, and used the remaining 20 % to pay off his student loan debt.Over the next 10 ",
-    "years Tom's investments grew steadily, and he was able to buy his first home, start a family, and achieve financial security. ",
-    "The inheritance, coupled with wise financial decisions, paved the way for a brighter future."];
+let text_array = ["When Tom's grandmother passed away,","he inherited $50,000. Unsure of what",
+    "to do with the money," ,"he sought advice from a financial advisor.", "Together, they devised a plan.",
+    "Tom invested 60 % of the money", "in a diversified portfolio of", "stocks and bonds, put 20 % into a",
+    "high - yield savings account for", "emergencies, and used the remaining 20 %", "to pay off his student loan debt.",
+    "Over the next 10 years Tom's", " investments grew steadily, and he was", "able to buy his first home, start a", "family, and achieve financial security.",
+    "The inheritance, coupled with", "wise financial decisions, paved", "the way for a brighter future."];
 
 console.log(text_array[0])
 console.log(text_array.length)
 
+
+
 let timer_text = document.querySelector(".curr-time");
-let error_text = document.querySelector(".curr-err");
+let curr_time_left = Number(timer_text.textContent);
+if (curr_time_left <= 10) {
+    timer_text.style.color ="#f5006a";
+}
+let error_text = document.querySelector(".curr-error");
 let accuracy_text = document.querySelector(".curr-acc");
 let cpm_text = document.querySelector(".curr-cpm");
 let wpm_text = document.querySelector(".curr-wpm");
 let text_text = document.querySelector(".text-container");
 let input_text = document.querySelector(".input");
 let input_container = document.querySelector("input-container");
-let restart_btn = document.querySelector(".restart_btn");
+const restart_btn = document.querySelector(".restart-btn");
 let cpm_div = document.querySelector(".cpm-div");
 let wpm_div = document.querySelector(".wpm-div");
 let error_div = document.querySelector("error-div");
@@ -74,34 +95,13 @@ let current_text = "";
 let text_no = 0;
 let timer = null;
 
-function updateText() {
-    text_text.textContent = null;
-    current_text = text_array[text_no];
+input_text.addEventListener('keydown', () => {
+    const audio = new Audio('click.mp3');
+    audio.currentTime = 0;
+    audio.play();
+})
 
-    // seperate each character and make an element
-    // out of each of them to individually style them
-    current_text.split('').forEach(char => {
-        const char_span = document.createElement('span');
-        char_span.innerText = char;
-        text_text.appendChild(char_span);
-    })
-    
-    if (text_no < text_array.length - 1)
-        text_no++
-    else
-        text_no = 0;
-}
 
-function processCurrentText() {
-    curr_input = input_container.value;
-    curr_input_array = curr_input.split("");
-}
-
-function resetCounters() {
-    time_left = TIME_LIMIT;
-    time_elapsed = 0;
-    errors = 0;
-    accuracy = 0;
-    character_typed = 0;
-    text_no = 0;
-}
+restart_btn.addEventListener('click', () => {
+    resetCounters();
+});

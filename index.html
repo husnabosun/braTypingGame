@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Typing Game</title>
+        <title>braTyping Game</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
             <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjiw5cEHbc4BhXtJh-bBzC8Kmzj6Ok2evSpQ&s" type="image/x-icon" />
 
@@ -16,7 +17,7 @@
     <body>
         <div class = "container">
         <div class="header-div">
-            <header class="header-text">Typing Game</header>
+                <header class="header-text">Typing Game</header> 
         </div>
 
         <div class = "indicator-container">
@@ -55,12 +56,19 @@
             onfocus="startGame()"></textarea>
         </div>  
 
-        <button class="restart-btn"
-        onclick="resetValues()">Restart</button>
+        <button class="restart-btn"">Restart</button>
+
+        <div class="volume-div">
+            <button class="volume-btn">
+                <i class="fa-solid fa-volume-high"></i>
+            </button>
+        </div>
+
 
         </div>
 
-        <script src = "game.js"></script>
+        <script src = "logic.js"></script>
+        <script src = "ui.js"></script>
  
 
     </body>
