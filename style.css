@@ -20,6 +20,8 @@ body{
     border-color: #4a2d0a;
     margin-left: 10px;
     box-shadow: black 5px 8px 5px;
+    position: fixed;
+    bottom: 40px;
 }
 .volume-btn i{
     color: #4a2d0a;
@@ -89,12 +91,12 @@ body{
     box-shadow: black 5px 8px 5px;
     
 }
-.wpm-div, .cpm-div{
-    display:none;
-}
 .curr-error, .curr-time, .curr-acc, .curr-wpm, .curr-cpm{
     font-size:30px;
     font-weight: 1000;
+}
+.acc-div, .wpm-div, .character-div{
+    display: none;
 }
 .text-container{
     display: flex;
