@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>braTyping Game</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+            <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjiw5cEHbc4BhXtJh-bBzC8Kmzj6Ok2evSpQ&s" type="image/x-icon" />
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap');
+        </style>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Bitcount&family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&display=swap');
+        </style>
+
+    </head>
+    <body>
+        <div class = "container">
+        <div class="header-div">
+                <header class="header-text">Typing Game</header> 
+        </div>
+
+        <div class = "indicator-container">
+
+            <div class = "acc-div shake-target">
+                <div>% ACCURACY</div>
+                <div class = "curr-acc">100</div>
+            </div>
+
+            <div class = "cpm-div shake-target">
+                <div class="header_text">CPM</div>
+                <div class = "curr-cpm">0</div>
+            </div>
+
+            <div class = "wpm-div shake-target" >
+                <div class="header_text">WPM</div>
+                <div class = "curr-wpm" >0</div>
+            </div>
+
+            <div class = "time-div shake-target">
+                <div>TIME(sec)</div>
+                <div class = "curr-time">60</div>
+            </div>
+
+            <div class = "error-div shake-target">
+                <div>ERRORS</div>
+                <div class = "curr-error">0</div>
+            </div>
+
+
+        </div>
+
+        <div class="text-container shake-target">Click on the area below to start the game</div>
+
+        <div class = "input-container">
+            <textarea class = "input" placeholder="start typing here..." 
+            oninput = "processCurrentText()" 
+            onfocus="startGame()"></textarea>
+        </div>  
+
+        <button class="restart-btn"">Restart</button>
+
+        <div class="volume-div">
+            <button class="volume-btn">
+                <i class="fa-solid fa-volume-high"></i>
+            </button>
+        </div>
+
+        <div class="character-div"></div>
+
+        </div>
+
+        <script src = "logic.js"></script>
+        <script src = "ui.js"></script>
+ 
+
+    </body>
+</html>

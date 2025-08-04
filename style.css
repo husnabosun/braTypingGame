@@ -1,0 +1,191 @@
+body{
+    background-color: #bdeb34;
+    color:#4a2d0a;
+    text-align: center;
+}
+
+.settings-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap:10px;
+}
+
+.volume-btn{
+    background-color: #bdeb34;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: white;
+    border-color: #4a2d0a;
+    margin-left: 10px;
+    box-shadow: black 5px 8px 5px;
+    position: fixed;
+    bottom: 40px;
+}
+.volume-btn i{
+    color: #4a2d0a;
+    font-size: 25px;
+}
+.volume-btn:hover{
+    transform: scale(1.1);
+    background-color: #f5006a;
+}
+.volume-btn i:hover{
+    color:white;
+}
+
+.header-div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+.header-text{
+    margin-top: 20px;
+    font-family: "Bitcount", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 90px;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0,
+        "CRSV" 0.5,
+        "ELSH" 0,
+        "ELXP" 0;;
+    align-self: center;
+}
+.header-text span:hover{
+    color:#f5006a;
+    transition: color 0.1s ease;
+    cursor: pointer;
+}
+
+
+.container{
+    display:flex;
+    flex-direction: column;
+}
+.indicator-container{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.error-div, .time-div, .acc-div, .wpm-div, .cpm-div{
+    display: flex;
+    flex-direction: column;
+    font-family: "Intel One Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    background-color: white;
+    height: 80px;
+    width: 120px;
+    align-items: center;
+    padding-top: 10px ;
+    border-radius: 20%;
+    box-shadow: black 5px 8px 5px;
+    
+}
+.curr-error, .curr-time, .curr-acc, .curr-wpm, .curr-cpm{
+    font-size:30px;
+    font-weight: 1000;
+}
+.acc-div, .wpm-div, .character-div{
+    display: none;
+}
+.text-container{
+    display: flex;
+    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: "Bitcount", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 24px;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0,
+        "CRSV" 0.5,
+        "ELSH" 0,
+        "ELXP" 0;;
+    background-color: white;
+    padding: 20px;
+    width: 600px;;
+    margin: 20px auto;
+    border-radius: 10%;
+    box-shadow: black 5px 8px 5px;
+}
+.input-container{
+    background-color: white;
+    padding: 20px;
+    width: 600px;
+    height: 100px;
+    margin: 20px auto;
+    box-shadow: black 5px 8px 5px;
+    cursor: pointer;
+}
+.input{
+    font-family: "Intel One Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    width: 600px;
+    height: 100px;
+    border: none;
+    outline: none;
+    resize: none;
+}
+.restart-btn{
+    display:none;
+    opacity: 0; /*şeffaf*/
+    transition: opacity 0.3s ease;/*opacity transition effect*/
+    background-color: #4a2d0a;
+    font-family: "Bitcount", system-ui;
+    font-optical-sizing: auto;
+    color : white;
+    padding: 8px;
+    width: 110px;
+    height: 50px;
+    border-radius: 30%;
+    align-self: center;
+    box-shadow: black 5px 8px 5px;
+    cursor: pointer;
+}
+.restart-btn.visible{
+    display: block;
+    opacity: 1;
+}
+.volume-div{
+    display: flex;
+    align-self: flex-start;
+    margin-left:20px;
+}
+.correct_char{
+    color:#21a33d;
+}
+.incorrect_char{
+    color: #f5006a;
+}
+@keyframes shake{
+    0% {transform: translate(0,0);}
+    25% {transform: translate(4px,0);}
+    50% {transform: translate(-4px,0);}
+    75% {transform: translate(4px,0);}
+    100% {transform: translate(0,0);}
+}
+.shake{
+    animation: shake 0.4s;
+}
+
+.restart-btn:hover{
+    color: #4a2d0a;
+    background-color: white;
+    transform: scale(1.1);
+
+}
