@@ -122,10 +122,10 @@ input_text.addEventListener('keydown', () => {
 })
 restart_btn.addEventListener('click', () => {
       
-    resetCounters();
-    /*setTimeout(() => {
+    
+    setTimeout(() => {
     location.reload();
-    }, 300);*/
+    }, 300);
 
     if (isMuted) return;
 
